@@ -1,0 +1,10 @@
+# File used to prevent certain files from being pushed to the repository
+# Data files
+*.zip
+*.csv
+*.gdb
+*.json
+*.xml
+
+# Any file/folder with this name 
+.ipynb_checkpoints 
