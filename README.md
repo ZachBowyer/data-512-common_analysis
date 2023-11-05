@@ -7,6 +7,12 @@ Specfically, I am assigned to look at Kansas, Leavenworth.
 (Population: 37081)
 (County: Leavenworth)
 
+# Research question:
+What are the estimated smoke impacts on Leavenworth, Kansas for the last 60 years?
+
+Answer: I came up with a simple formula to estimate the amout of smoke received by Leavenworth annually.
+
+
 # Data sources:
 ```
 1. Name:  
