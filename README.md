@@ -55,7 +55,7 @@ I looked for sources talking about the amount of wood per square meter in a fore
 
 # Comparison of smoke estimate to AQI
 ```
-As shown above, there seems to be a slight trend agreement between AQI and my smoke estimate for a few years. However, my smoke estimate scaling is an order of magnitude larger. Additionally, data was sparse for both problems,  required a lot of averaging over time, and was calculated using multiple (likely bad) assumptions. Therefore, given all of the issues presented I believe it is safe to say my smoke estimate is bad. 
+As shown above, there seems to be a slight trend agreement between AQI and my smoke estimate for a few years. However, my smoke estimate scaling is an order of magnitude larger. Additionally, data was sparse for both problems, required a lot of averaging over time, and was calculated using multiple (likely bad) assumptions. Therefore, given all of the issues presented I believe it is safe to say my smoke estimate is bad. 
 ```
 
 # Data source:
@@ -142,14 +142,15 @@ As shown above, there seems to be a slight trend agreement between AQI and my sm
 
 ```
 ./Images/
-    1. ./Images/FireOccurenceHistogram.png - 
-    2. ./Images/AcresTimeSeries.png - 
-    3. ./Images/SmokeAndAQITimeSeries.png - 
+    1. ./Images/FireOccurenceHistogram.png - See ./Reports/CommonAnalysisReflections.pdf
+    2. ./Images/AcresTimeSeries.png - See ./Reports/CommonAnalysisReflections.pdf
+    3. ./Images/SmokeAndAQITimeSeries.png - See ./Reports/CommonAnalysisReflections.pdf
 ```
 
 ```
 ./Reports/
     1. ./Reports/CommonAnalysisReflections.docx - Written report on reflections for part 1 of the project
+    2. ./Reports/CommonAnalysisReflections.pdf - Written report on reflections for part 1 of the project
 ```
 
 ```
