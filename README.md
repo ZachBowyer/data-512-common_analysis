@@ -192,10 +192,20 @@ Disability types and percentages
 4. https://data.census.gov/table/ACSST5Y2021.S0101?q=Leavenworth%20city,%20Kansas&t=Age%20and%20Sex - Age and Sex
 5. 
 
-# Wip papers
+# Wip papers/links
 1. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8101535/ 
 2. https://ehjournal.biomedcentral.com/articles/10.1186/s12940-020-0559-2 
 3. https://www.ahajournals.org/doi/10.1161/JAHA.114.001653 
+4. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8862306/ asthma is 1.3% of ED visits
+5. https://hcup-us.ahrq.gov/reports/statbriefs/sb286-ED-Frequent-Conditions-2018.jsp 439/1000 population ED Visits 2018
+6. https://www.cdc.gov/asthma/most_recent_national_asthma_data.htm 7.7 people have asthma 2021
+7. https://www.cdc.gov/air/wildfire-smoke/default.htm Says people with astham, COPD, and heart disease at risk via smoke exposure
+8. https://www.yalemedicine.org/news/how-bad-is-wildfire-smoke-for-your-health - particular exposure can also increase heart attack and stroke risks
+9. https://www.cdc.gov/nchs/hus/topics/heart-disease-prevalence.htm#:~:text=Key%20Findings&text=The%20age%2Dadjusted%20prevalence%20of,been%20diagnosed%20with%20heart%20disease. heart disease age percentages
+10. https://professional.heart.org/-/media/PHD-Files-2/Science-News/2/2022-Heart-and-Stroke-Stat-Update/2022-Stat-Update-factsheet-GIobal-Burden-of-Disease.pdf CVD percentage 7.7 for 2022
+11. https://www.cdc.gov/stroke/facts.htm - Strokes per year
+12. https://www.cdc.gov/heartdisease/facts.htm - heart attacks per year
+
 
 Find various health issues that are relevant to smoke (cardiovascular and respiratory issues).
 Get national averages.
@@ -205,3 +215,4 @@ Find estimate for total ED visits via relevant diseases (percentages based on nu
 Once we get yearly estimates do a linear regression/ARMA to project to 2050.
 Project the rest of the diseases for visualizations.
 Lets try to model total emergency department visits
+
