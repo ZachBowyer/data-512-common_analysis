@@ -205,6 +205,8 @@ Disability types and percentages
 10. https://professional.heart.org/-/media/PHD-Files-2/Science-News/2/2022-Heart-and-Stroke-Stat-Update/2022-Stat-Update-factsheet-GIobal-Burden-of-Disease.pdf CVD percentage 7.7 for 2022
 11. https://www.cdc.gov/stroke/facts.htm - Strokes per year
 12. https://www.cdc.gov/heartdisease/facts.htm - heart attacks per year
+13. https://www.pnas.org/doi/10.1073/pnas.2302409120#:~:text=In%20contrast%2C%20health%20outcomes%20with,increase%20by%2030%20to%20110%25. Asthma and COPD ED visits increase by 30-110%
+14. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6015400/ - cardiovascular ED visit increass from wildfire smoke
 
 
 Find various health issues that are relevant to smoke (cardiovascular and respiratory issues).
