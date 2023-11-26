@@ -180,3 +180,28 @@ python -m ipykernel install --user --name=Data512Project
 # References
 1. https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81 
 2. http://virtual.vtt.fi/virtual/innofirewood/stateoftheart/database/burning/burning.html#:~:text=In%20well%20ventilated%20conditions%2C%20the,the%20smoke%20production%20of%20wood 
+
+
+
+# WIP dataset
+1. https://data.census.gov/table/ACSST5Y2021.S2407?q=Leavenworth%20city,%20Kansas&t=Class%20of%20Worker - Employment type
+2. https://data.census.gov/table/ACSSE2022.K201803?q=Leavenworth%20city,%20Kansas&t=Disability - 
+Disability types and percentages
+3. https://data.census.gov/table/ACSSE2022.K201801?q=Leavenworth%20city,%20Kansas&t=Health 
+- Disability by age
+4. https://data.census.gov/table/ACSST5Y2021.S0101?q=Leavenworth%20city,%20Kansas&t=Age%20and%20Sex - Age and Sex
+5. 
+
+# Wip papers
+1. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8101535/ 
+2. https://ehjournal.biomedcentral.com/articles/10.1186/s12940-020-0559-2 
+3. https://www.ahajournals.org/doi/10.1161/JAHA.114.001653 
+
+Find various health issues that are relevant to smoke (cardiovascular and respiratory issues).
+Get national averages.
+Find smoke impact to those issues and see how much it increases risk of them.
+Add average for city population + percentage risk increase * leftover pop to get projected new numbers of disease in the city
+Find estimate for total ED visits via relevant diseases (percentages based on number of people with specific diseases relevant to smoke).
+Once we get yearly estimates do a linear regression/ARMA to project to 2050.
+Project the rest of the diseases for visualizations.
+Lets try to model total emergency department visits
