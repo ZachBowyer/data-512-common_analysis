@@ -207,6 +207,10 @@ Disability types and percentages
 12. https://www.cdc.gov/heartdisease/facts.htm - heart attacks per year
 13. https://www.pnas.org/doi/10.1073/pnas.2302409120#:~:text=In%20contrast%2C%20health%20outcomes%20with,increase%20by%2030%20to%20110%25. Asthma and COPD ED visits increase by 30-110%
 14. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6015400/ - cardiovascular ED visit increass from wildfire smoke
+15. https://www.cdc.gov/mmwr/volumes/67/wr/mm6713a1.htm 9.9% of people with asthma visited ED
+16. https://www.cdc.gov/nchs/products/databriefs/db452.htm#:~:text=An%20estimated%20131%20million%20ED,with%20all%20other%20age%20groups. 40/100 people visit ED each year
+17. https://hcup-us.ahrq.gov/reports/statbriefs/sb47.pdf 0.6%, 0.6% adult ED visits are heart attack/stroke
+18. https://www.cdc.gov/nchs/data/nhsr/nhsr174.pdf 11.4% ED visits from heart disease
 
 
 Find various health issues that are relevant to smoke (cardiovascular and respiratory issues).
