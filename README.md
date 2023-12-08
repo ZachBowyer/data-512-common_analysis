@@ -1,29 +1,91 @@
-# data-512-common_analysis
-Course project part 1 - Common Analysis sets the stage for the subsequent  
- assignments. In Part 1 you conduct a base analysis. All of the students in  
- the class will conduct the same analysis, but with a slightly different data subset.  
+# NOTE:
+This work was accomplished for a University of Washington MSDS course.  
+The analyses in this work should not be assumed to be correct.  
 
-Specfically, I am assigned to look at Kansas, Leavenworth. 
-(Population: 37081)
-(County: Leavenworth)
+# Analysis of the wildfire smoke impact on the healthcare industry in Leavenworth, Kansas
+This work is designed to answer a specific human-related issue.  
+Specifically, this project aims to measure the impact that wildfire smoke has on Leavenworth, Kansas.  
+Specifically, this work looks at healthcare data, population data, and specific diseases.    
 
-# Research question:
-What are the estimated smoke impacts on Leavenworth, Kansas for the last 60 years?
+# Information about Leavenworth, Kansas
+Population: 37081  
+Founded: 1854  
+Area: 24.31 square miles  
+Median age (2021): 36.9  
+County: Leavenworth  
+Coordinates: 39°19′22″N 94°55′27″W  
+Wikipedia link: https://en.wikipedia.org/wiki/Leavenworth,_Kansas 
+
+![image](Images/LeavenworthMap.png)
+
+# What was accomplished? 
 ```
-As the years go on, results show the estimated smoke impact on Leavenworth, Kansas have been 
-increasing relatively. In this analysis we looked at various historical wildfire data and came up
-with an estimate of the smoke impact through a specific formula.
-This formula is: Smoke_impact_from_fire = (area_forest_burned * 10 * 87.5) / (distance_from_city^5)  
-While it has many different flaws and assumptions, the main point of this formula is used to  
-show how this estimate increases relatively over the years.  
+In this work I explored how the healthcare industry of Leavenworth Kansas was impacted
+by wildfire smoke by reading in various datasources, combining them, making projections, and using visualizations.
 
-Below is a visualizations that could potentially support this claim. Notice how both the AQI and smoke  
-estimates have large increases around 2010. With that being said, the estimates used for monthly AQI  
-and annual smoke estimation make it very difficult to compare the two besides using general trend, especially since data is sparse.     
+Given my explorations, I ended up making a final policy recommendation for the city council.  
 ```
-![image](Images/SmokeAndAQITimeSeries.png)
 
-# Annual smoke estimate information:
+# Why does this matter?
+```
+Wildfire smoke is dangerous to inhale over both the short and the long term.  
+This comes with associated economic and health costs.  
+To attempt to minimize future costs, policymakers need to be informed about current/future trends regarding wildfire smoke. 
+```
+
+# Policy recommendation made to the city council
+```
+Given the analysis findings:
+1. No need for drastic action
+2. Continue to monitor the situation
+3. Issue stay at home recommendations when AQI is at unhealthy levels
+4. Increase public awareness
+5. Consider subsidizing healthcare industry to combat declining workforce
+```
+
+# What lead you to making that specific policy recommendation?
+### Part 1
+```
+The healthcare industry is going to have their work cut out for them in the future for three main reasons.
+1. The population of Leavenworth, Kansas is rising according to projections.
+2. The old age depedency ratio of Leavenworth, Kansas is rising.
+3. The number of healthcare workers is declining in recent years.  
+```
+![image](Images/OldAgeDepRatio.png)
+![image](Images/PopulationProjections.png)
+![image](Images/Healthcare_education_socialwork_count.png)
+
+### Part 2
+```
+The amount of wildfire smoke Leavenworth receives is increasing. This is partially supported by AQI measurements. 
+
+For example, our estimates show the AQI has been steadily increasing in Leavenworth. 
+Additionally, our custom smoke estiamte + projection model predicts a slight increase in wildfire smoke through 2050. 
+```
+![image](Images/ProjectedSmokeEstimates.png)
+![image](Images/AQI_measurements.png)
+
+
+#####  Comparison of smoke estimate to AQI
+```
+As shown above, there seems to be a slight trend agreement between AQI and my smoke estimate for a few years. However, my smoke estimate scaling is an order of magnitude larger. Additionally, data was sparse for both problems, required a lot of averaging over time, and was calculated using multiple (likely bad) assumptions. Therefore, given all of the issues presented I believe it is safe to say my smoke estimate is bad. 
+```
+
+### Part 3
+```
+Long term exposure to wildfire smoke exacerbates health issues. Thus, the increasing smoke will lead to increased Emergency Department (ED) visits.
+```
+![image](Images/ExtraCostsFromEDVisits.png)
+
+# How can this work be extended?
+```
+This work makes a lot of assumptions and uses many estimates.  
+The biggest way to improve this work out of the gate is to do extensive research
+looking into each of the estimates/research applications used in this work and make sure they are valid. Specific assumptions and estimates made will be talked about below.  
+```
+
+# Assumptions/Estimates
+##### Annual smoke estimate
 ```
 The estimate for annual smoke that I came up with is very simple. 
 In this estimate I try to incorporate the volume of smoke burned by wood, the amount of 
@@ -34,7 +96,8 @@ Formula: Smoke_impact_from_fire = (area_forest_burned * 10 * 87.5) / (distance_f
 To get the annual smoke estimate, we sum the smoke_impact_from_fire over every fire.
 
 Assumptions made:
-1. The volume of smoke produced by wood is 87.5 M^2 per kg [2].  
+1. The volume of smoke produced by wood is 87.5 M^2 per kg. 
+http://virtual.vtt.fi/virtual/innofirewood/stateoftheart/database/burning/burning.html
 2. There is 10 kilograms of wood on average per square meter in a forest. (No source)
 3. Smoke dispersion is inversely proportional to the distance to the fifth power. (Did this to keep relative scale low)
 
@@ -52,13 +115,33 @@ I did not see a reason to only use wildfires from the fire season, as smoke can 
 
 I looked for sources talking about the amount of wood per square meter in a forest but could not find anything. Therefore I arbitrarily picked a number, as the amount of smoke would scale linearly, so in terms of tracking relative change it wouldn't affect much. 
 ```
-
-# Comparison of smoke estimate to AQI
+##### AQI estimate
 ```
-As shown above, there seems to be a slight trend agreement between AQI and my smoke estimate for a few years. However, my smoke estimate scaling is an order of magnitude larger. Additionally, data was sparse for both problems, required a lot of averaging over time, and was calculated using multiple (likely bad) assumptions. Therefore, given all of the issues presented I believe it is safe to say my smoke estimate is bad. 
+AQI stands for Air Quality Index, which is just a number from 0-500 that quantifies how hazardous
+the air currently is. AQI measures carbon monoxide, nitrogren dioxide, ozone health, particle pollution, and sulfur dioxide. 
+
+In this work, since we are dealing with wildfire data, we only will consider particulates when dealing with AQI. More specifically, we will only include data that measures PM10 and PM2.5 which respectively measure particles less than 10 micrometers and particles less than 2.5 micrometers in size. 
 ```
 
-# Data source:
+#### Leavenworth population Estimates
+#### Leavenworth healthcare employment estimate
+#### Leavenworth old age depedency ratio estimate
+#### Leavenworth uninsured percentage estimate
+```
+All of these estimates, which are derived from US census data, are assumed to be accurate and representative of the population. 
+```
+#### Number of ED visits per year
+#### Increase in ED visit risk per 5 conditions due to wildfire smoke
+```
+Asthma
+CVD
+COPD
+Heart attack
+Stroke
+```
+
+# Data sources:
+##### Wildfire data
 ```
 1. Name:  
         Combined wildland fire datasets for the United States and certain territories,   
@@ -122,9 +205,94 @@ As shown above, there seems to be a slight trend agreement between AQI and my sm
             },
         }
 ```
+##### AQI data
+```
+1. Name:  
+   Description:  
+        What is AQI?
+        https://ecology.wa.gov/Research-Data/Monitoring-assessment/Air-Quality-Index  
+        AQI stands for Air Quality Index, which is just a number from 0-500 that quantifies how hazardous
+        the air currently is. AQI measures carbon monoxide, nitrogren dioxide, ozone health, particle pollution, and sulfur dioxide. 
+        In this work, since we are dealing with wildfire data, we only will consider particulates when dealing with AQI. More specifically, we will only include data that measures PM10 and PM2.5 which respectively measure particles less than 10 micrometers and particles less than 2.5 micrometers in size (diameter?).
+   URL:  
+        https://aqs.epa.gov/aqsweb/documents/data_api.html 
+   Schema/Info:     
+        {
+			  "Header": [
+				{
+				  "status": "success",
+				  "request_time": "2018-06-13T07:45:01-04:00",
+				  "url": "https://...",
+				  "rows": 1
+				}
+			  ],
+			  "Body": [
+				{
+				  "state_code": "01",
+				  "county_code": "073",
+				  "site_number": "0023",
+				  "parameter_code": "88101",
+				  "poc": 1.0,
+				  "latitude": 33.0,
+				  "longitude": -86.0,
+				  "datum": "WGS84",
+				  "parameter_name": "PM2.5 - Local Conditions",
+				  "date_local": "2017-04-01",
+				  "time_local": "00:00",
+				  "date_gmt": "2017-04-01",
+				  "time_gmt": "06:00",
+				  "sample_measurement": 6.2,
+				  "unit_of_measure": "Micrograms/cubic meter (LC)",
+				  "detection_limit": 2.0,
+				  "uncertainty": null,
+				  "qualifiers": null,
+				  "method_type": "FRM",
+				  "method_code": "142",
+				  "method_name": "BGI Models PQ200-VSCC or PQ200A-VSCC - Gravimetric",
+				  "state_name": "Alabama",
+				  "county_name": "Jefferson",
+				  "date_of_last_change": "2017-05-30",
+				  "cbsa_code": "13820"
+				}
+			  ]
+		}
+```
+##### Census data
+```
+Description:
+    This work utilized United States census data, which can be found at https://data.census.gov/. United States census data is quite vast and can include many different schemas which cannot be fully described here. For this work specifically, population estimates, age estimates, healthcare coverage estimates, and employment by industry estimates were used. 
+
+    Data downloaded has three files per year, below are some examples:
+    1. ACSST5Y2010.20101-Column-Metadata.csv - Describes what each column in the Data file stands for
+    2. ACSST5Y2010.20101-Data.csv            - The quantitative data we use in our analyses
+    3. ACSST5Y2010.20101-Table-Notes.txt     - Extra metadata describing how certain fields were calculated, 
+                                               how estimates were made, etc.
+URLs: 
+    https://data.census.gov/
+    https://data.census.gov/table/ACSST5Y2021.S2407?q=Leavenworth%20city,%20Kansas&t=Class%20of%20Worker - Employment type
+    https://data.census.gov/table/ACSSE2022.K201803?q=Leavenworth%20city,%20Kansas&t=Disability - Disability types and percentages
+    https://data.census.gov/table/ACSSE2022.K201801?q=Leavenworth%20city,%20Kansas&t=Health - Disability by age
+    https://data.census.gov/table/ACSST5Y2021.S0101?q=Leavenworth%20city,%20Kansas&t=Age%20and%20Sex - Age and Sex
+    https://data.census.gov/table/ACSST5Y2022.S2701?q=Leavenworth%20city,%20Kansas&t=Health%20Insurance - Health insurance
+Schema/INFO:
+    There are too many files to describe them all. However, here is a short example of a metadata file. 
+    The main point to takeaway is that all of the files are csvs with
+    header column names that will need to be looked up. 
+    Column Name	Label  
+    GEO_ID	Geography  
+    NAME	Geographic Area Name  
+    S2701_C01_001E	Total!!Estimate!!Total civilian noninstitutionalized population  
+    S2701_C01_001M	Total!!Margin of Error!!Total civilian noninstitutionalized population  
+    S2701_C02_001E	Number Uninsured!!Estimate!!Total civilian noninstitutionalized population  
+    ...  
+    S2701_C01_054M	Total!!Margin of Error!!PERCENT IMPUTED!!Health insurance coverage!!Public coverage!!VA Health Care  
+    S2701_C02_054E	Number Uninsured!!Estimate!!PERCENT IMPUTED!!Health insurance coverage!!Public coverage!!VA Health Care  
+    S2701_C02_054M	Number Uninsured!!Margin of Error!!PERCENT IMPUTED!!Health insurance coverage!!Public coverage!!VA Health Care  
+    S2701_C03_054E	Percent Uninsured!!Estimate!!PERCENT IMPUTED!!Health insurance coverage!!Public coverage!!VA Health Care  
+    S2701_C03_054M	Percent Uninsured!!Margin of Error!!PERCENT IMPUTED!!Health insurance coverage!!Public coverage!!VA Health Care  
+```
 
 # Description of all project directories and files
-
 ```
 ./Archive/ - Collection of example files or files that are no longer needed
     1. ./Archive/epa_air_quality_history_example.ipynb - Example of requesting data from the EPA AQS api. 
@@ -138,6 +306,58 @@ As shown above, there seems to be a slight trend agreement between AQI and my sm
     2. ./Data/USGS_Wildland_Fire_Combined_WithDistances.json - Wildland Fire polygons in GeoJSON format
                                                         that include the average distance from the
                                                         polygon points to Leavenworth, Kansas
+    3. ./Data/AgeAndSex/
+            ACSST5Y2010.S0101-Column-Metadata.csv - Describes what each column in the Data file stands for
+            ACSST5Y2010.S0101-Data.csv - The quantitative data we use in our analyses
+            ACSST5Y2010.S0101-Table-Notes.txt - Extra metadata describing how certain fields were calculated
+            ...
+            ...
+            ...
+            ACSST5Y2021.S0101-Column-Metadata.csv - Describes what each column in the Data file stands for
+            ACSST5Y2021.S0101-Data.csv - The quantitative data we use in our analyses
+            ACSST5Y2021.S0101-Table-Notes.txt - Extra metadata describing how certain fields were calculated
+    4. ./Data/DisabilityByAge/
+            ACSSE2014.K201801-Column-Metadata.csv - Describes what each column in the Data file stands for
+            ACSSE2014.K201801-Data.csv - The quantitative data we use in our analyses
+            ACSSE2014.K201801-Table-Notes.txt - Extra metadata describing how certain fields were calculated
+            ...
+            ...
+            ...
+            ACSSE2022.K201801-Column-Metadata.csv - Describes what each column in the Data file stands for
+            ACSSE2022.K201801-Data.csv - The quantitative data we use in our analyses
+            ACSSE2022.K201801-Table-Notes.txt - Extra metadata describing how certain fields were calculated
+    5. ./Data/DisabilityEstimates/
+            ACSSE2014.K201803-Column-Metadata.csv - Describes what each column in the Data file stands for
+            ACSSE2014.K201803-Data.csv - The quantitative data we use in our analyses
+            ACSSE2014.K201803-Table-Notes.txt - Extra metadata describing how certain fields were calculated
+            ...
+            ...
+            ...
+            ACSSE2022.K201803-Column-Metadata.csv - Describes what each column in the Data file stands for
+            ACSSE2022.K201803-Data.csv - The quantitative data we use in our analyses
+            ACSSE2022.K201803-Table-Notes.txt - Extra metadata describing how certain fields were calculated
+    6. ./Data/HealthInsuranceCoverage/
+            ACSST5Y2012.S2701-Column-Metadata.csv - Describes what each column in the Data file stands for
+            ACSST5Y2012.S2701-Data.csv - The quantitative data we use in our analyses
+            ACSST5Y2012.S2701-Table-Notes.txt - Extra metadata describing how certain fields were calculated
+            ...
+            ...
+            ...
+            ACSST5Y2021.S2701-Column-Metadata.csv - Describes what each column in the Data file stands for
+            ACSST5Y2021.S2701-Data.csv - The quantitative data we use in our analyses
+            ACSST5Y2021.S2701-Table-Notes.txt - Extra metadata describing how certain fields were calculated
+    7. ./Data/IndustryByClassCivilianEmployedOver16/
+            ACSST5Y2010.S2407-Column-Metadata.csv - Describes what each column in the Data file stands for
+            ACSST5Y2010.S2407-Data.csv - The quantitative data we use in our analyses
+            ACSST5Y2010.S2407-Table-Notes.txt - Extra metadata describing how certain fields were calculated
+            ...
+            ...
+            ...
+            ACSST5Y2010.S2407-Column-Metadata.csv - Describes what each column in the Data file stands for
+            ACSST5Y2021.S2407-Data.csv - The quantitative data we use in our analyses
+            ACSST5Y2021.S2407-Table-Notes.txt - Extra metadata describing how certain fields were calculated
+    8. ./Data/SmokeEstimates.json - Projected smoke estimates to 2050 created in ./Src/CommonAnalysis.ipynb for use in ./Src/Extended_Analysis.ipynb  
+
 ```
 
 ```
@@ -145,12 +365,22 @@ As shown above, there seems to be a slight trend agreement between AQI and my sm
     1. ./Images/FireOccurenceHistogram.png - See ./Reports/CommonAnalysisReflections.pdf
     2. ./Images/AcresTimeSeries.png - See ./Reports/CommonAnalysisReflections.pdf
     3. ./Images/SmokeAndAQITimeSeries.png - See ./Reports/CommonAnalysisReflections.pdf
+    4. ./Images/AQI_measurements.png - Used in this readme, see appropriate section
+    5. ./Images/ExtraCostsFromEDVisits.png - Used in this readme, see appropriate section
+    6. ./Images/Healthcare_education_socialwork_count.pmg  - Used in this readme, see appropriate section
+    7. ./Images/LeavenworthMap.png - Used in this readme, see appropriate section
+    8. ./Images/OldAgeDependencyRation.png - Used in this readme, see appropriate section
+    9. ./Images/PopulationProjections.png - Used in this readme, see appropriate section
+    10. ./Images/ProjectedSmokeEstimates.png - Used in this readme, see appropriate section
 ```
 
 ```
 ./Reports/
     1. ./Reports/CommonAnalysisReflections.docx - Written report on reflections for part 1 of the project
     2. ./Reports/CommonAnalysisReflections.pdf - Written report on reflections for part 1 of the project
+    3. ./Reports/ExtensionPlanReport.pdf - Written report on proposed extension to the work done in CommonAnalysis.ipynb
+    4. ./Reports/Presentation.pptx - Powerpoint presentation on completed project given in class on 12/4/2023
+    5. ./Reports/FinalReport.docx - Final report of all completed work  
 ```
 
 ```
@@ -167,32 +397,23 @@ As shown above, there seems to be a slight trend agreement between AQI and my sm
         5. ./Src/wildfire/Widlfire_short_sample.json - Example geojson data
     2. ./Src/CommonAnalyis.ipynb - Notebook that has all of the relevant code and results for this 
                                    analysis  
+    3. ./Src/Extended_Analysis.ipynb - Extension to work done in ./Src/CommonAnalysis.ipynb
 ``` 
 ./environment.yml - Anaconda development environment file    
 ./gitignore - Prevents certain files from being pushed to the repository  
 ./LICENSE - MIT LICENSE statement   
 ./README.md - Project documentation (This file)  
 
+# How to run
+Install conda   
+Build conda environment from environment.yml  
+Run jupyter notebook with kernel activated  
+
 # Commands
-conda env create -f enviroment.yml  
+conda env create -f environment.yml  
 python -m ipykernel install --user --name=Data512Project  
 
 # References
-1. https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81 
-2. http://virtual.vtt.fi/virtual/innofirewood/stateoftheart/database/burning/burning.html#:~:text=In%20well%20ventilated%20conditions%2C%20the,the%20smoke%20production%20of%20wood 
-
-
-
-# WIP dataset
-1. https://data.census.gov/table/ACSST5Y2021.S2407?q=Leavenworth%20city,%20Kansas&t=Class%20of%20Worker - Employment type
-2. https://data.census.gov/table/ACSSE2022.K201803?q=Leavenworth%20city,%20Kansas&t=Disability - 
-Disability types and percentages
-3. https://data.census.gov/table/ACSSE2022.K201801?q=Leavenworth%20city,%20Kansas&t=Health 
-- Disability by age
-4. https://data.census.gov/table/ACSST5Y2021.S0101?q=Leavenworth%20city,%20Kansas&t=Age%20and%20Sex - Age and Sex
-5. 
-
-# Wip papers/links
 1. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8101535/ 
 2. https://ehjournal.biomedcentral.com/articles/10.1186/s12940-020-0559-2 
 3. https://www.ahajournals.org/doi/10.1161/JAHA.114.001653 
@@ -201,7 +422,7 @@ Disability types and percentages
 6. https://www.cdc.gov/asthma/most_recent_national_asthma_data.htm 7.7 people have asthma 2021
 7. https://www.cdc.gov/air/wildfire-smoke/default.htm Says people with astham, COPD, and heart disease at risk via smoke exposure
 8. https://www.yalemedicine.org/news/how-bad-is-wildfire-smoke-for-your-health - particular exposure can also increase heart attack and stroke risks
-9. https://www.cdc.gov/nchs/hus/topics/heart-disease-prevalence.htm#:~:text=Key%20Findings&text=The%20age%2Dadjusted%20prevalence%20of,been%20diagnosed%20with%20heart%20disease. heart disease age percentages
+9. https://www.cdc.gov/nchs/hus/topics/heart-disease-prevalence.htm - heart disease age percentages
 10. https://professional.heart.org/-/media/PHD-Files-2/Science-News/2/2022-Heart-and-Stroke-Stat-Update/2022-Stat-Update-factsheet-GIobal-Burden-of-Disease.pdf CVD percentage 7.7 for 2022
 11. https://www.cdc.gov/stroke/facts.htm - Strokes per year
 12. https://www.cdc.gov/heartdisease/facts.htm - heart attacks per year
@@ -211,14 +432,5 @@ Disability types and percentages
 16. https://www.cdc.gov/nchs/products/databriefs/db452.htm#:~:text=An%20estimated%20131%20million%20ED,with%20all%20other%20age%20groups. 40/100 people visit ED each year
 17. https://hcup-us.ahrq.gov/reports/statbriefs/sb47.pdf 0.6%, 0.6% adult ED visits are heart attack/stroke
 18. https://www.cdc.gov/nchs/data/nhsr/nhsr174.pdf 11.4% ED visits from heart disease
-
-
-Find various health issues that are relevant to smoke (cardiovascular and respiratory issues).
-Get national averages.
-Find smoke impact to those issues and see how much it increases risk of them.
-Add average for city population + percentage risk increase * leftover pop to get projected new numbers of disease in the city
-Find estimate for total ED visits via relevant diseases (percentages based on number of people with specific diseases relevant to smoke).
-Once we get yearly estimates do a linear regression/ARMA to project to 2050.
-Project the rest of the diseases for visualizations.
-Lets try to model total emergency department visits
-
+19. https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81 
+20. http://virtual.vtt.fi/virtual/innofirewood/stateoftheart/database/burning/burning.html#:~:text=In%20well%20ventilated%20conditions%2C%20the,the%20smoke%20production%20of%20wood 
